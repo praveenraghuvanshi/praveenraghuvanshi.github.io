@@ -134,14 +134,15 @@ SSA is a powerful framework for decomposing the time-series into trend, seasonal
 ## Visualization
 
 Visualization is an integral part of EDA. It allows multiple representation of data present in raw format. I have used table and plots (bar, pie, scatter) for visualization. Some of them is shown below
-
+<div align="center">
 <img src=".\assets\visualization-pie.png" alt="Visualization - Pie" style="zoom:80%;" />
 
 <img src=".\assets\visualization-bar.png" alt="Visualization - Bar" style="zoom:80%;" />
+</div>
 
 
 
-**Prediction : Before and After **
+#### Prediction : Before and After
 
 <img src=".\assets\visualization-prediction.png" alt="Prediction- Before and After" style="zoom:80%;" />
 
