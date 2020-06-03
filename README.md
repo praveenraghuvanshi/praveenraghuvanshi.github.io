@@ -177,3 +177,5 @@ Thank you reading this post, if you liked it, please like/comment. It'll encoura
   - **Twitter :** @praveenraghuvan
   
  Made with :heart: by ML.Net enthusiast
+ 
+ [Part-1](part-1/README.md)
