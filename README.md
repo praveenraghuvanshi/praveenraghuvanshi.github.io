@@ -149,7 +149,7 @@ Visualization is an integral part of EDA. It allows multiple representation of d
 
 ## Conclusion
 
-In this post, I have just touched on the things covered as part of my presentation. Please move on to Part-1 and thereafter Part-2 for more detailed analysis and explanation. I would recommend to have a look at other presentation of Virtual ML.Net conference and I am sure you would love them as I did. This was the first edition of Virtual ML.Net and I wish to have many more of these. I am running a telegram ML.Net  group for ML.Net enthusiasts, please feel free to join it. 
+In this post, I have just touched on the things covered as part of my presentation. Please move on to Part-1 and thereafter Part-2 for more detailed analysis and explanation. I would recommend to have a look at other presentation of Virtual ML.Net conference and I am sure you would love them as I did. This was the first edition of Virtual ML.Net and I wish to have many more of these. I am running a telegram [ML.Net](https://t.me/joinchat/IifUJQ_PuYT757Turx-nLg) group for ML.Net enthusiasts, please feel free to join it. I wish a bigger and bolder next edition of Virtual ML.Net. 
 
 Thank you reading this post, if you liked it, please like/comment. It'll encourage me to write more. 
 
@@ -158,7 +158,7 @@ Thank you reading this post, if you liked it, please like/comment. It'll encoura
 - Resources
   - [Virtual ML.Net](https://virtualml.net/)
   - [Slides](https://github.com/virtualmlnet/presentations-2020)
-  - [Video]
+  - [Video](https://www.youtube.com/watch?v=6LMaFRJyuKg)
   - [Part-1](https://github.com/praveenraghuvanshi1512/covid-19/tree/master/part-1)
   - [Part-2](https://github.com/praveenraghuvanshi1512/covid-19/tree/master/part-2)
   - [Github](https://github.com/praveenraghuvanshi1512/TechnicalSessions/tree/master/31052020-virtualmlnet)
