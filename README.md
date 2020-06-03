@@ -167,8 +167,8 @@ Thank you reading this post, if you liked it, please like/comment. It'll encoura
   - [Virtual ML.Net](https://virtualml.net/)
   - [Slides](https://github.com/virtualmlnet/presentations-2020)
   - [Video](https://www.youtube.com/watch?v=6LMaFRJyuKg)
-  - [Part-1](https://github.com/praveenraghuvanshi1512/covid-19/tree/master/part-1)
-  - [Part-2](https://github.com/praveenraghuvanshi1512/covid-19/tree/master/part-2)
+  - [Part-1](part-1/README.md)
+  - [Part-2](part-2/README.md)
   - [Github](https://github.com/praveenraghuvanshi1512/TechnicalSessions/tree/master/31052020-virtualmlnet)
   - [ML.Net Telegram group](https://t.me/joinchat/IifUJQ_PuYT757Turx-nLg)
 - Contact
