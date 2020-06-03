@@ -24,10 +24,10 @@ Key highlights of the event
 
 My presentation was on **COVID-19 Exploratory Data Analysis using .Net Dataframe API (C#)**. It was divided into two parts as given below.
 
-- **Part-1:** [COVID-19 Data Analysis using .Net DataFrame API](https://github.com/praveenraghuvanshi1512/covid-19/tree/master/part-1)
-- **Part-2:** [COVID-19 Prediction using ML.Net framework](https://github.com/praveenraghuvanshi1512/covid-19/tree/master/part-2)
+- **Part-1:** [COVID-19 Data Analysis using .Net DataFrame API](part-1/README.md)
+- **Part-2:** [COVID-19 Prediction using ML.Net framework](part-2/README.md)
 
-In this section, i'll mainly cover few things covered as part of my presentation such as COVID-19, DataFrame API(EDA), ML.Net(Prediction). It'll be a brief introduction to the topics, for working solution, please refer Part-1 and Part-2. [Part-1](https://github.com/praveenraghuvanshi1512/covid-19/tree/master/part-1) covers exploratory data analysis on COVID dataset for a particular day. [Part-2](https://github.com/praveenraghuvanshi1512/covid-19/tree/master/part-2) covers data analysis and prediction/forecasting for next 7 days using time-series COVID dataset. We'll leverage recently introduced support for C# in Jupyter Notebook
+In this section, i'll mainly cover few things covered as part of my presentation such as COVID-19, DataFrame API(EDA), ML.Net(Prediction). It'll be a brief introduction to the topics, for working solution, please refer Part-1 and Part-2. [Part-1](part-1/README.md) covers exploratory data analysis on COVID dataset for a particular day. [Part-2](part-2/README.md) covers data analysis and prediction/forecasting for next 7 days using time-series COVID dataset. We'll leverage recently introduced support for C# in Jupyter Notebook
 
 ## Acknowledgement
 
@@ -157,7 +157,7 @@ Visualization is an integral part of EDA. It allows multiple representation of d
 
 ## Conclusion
 
-In this post, I have just touched on the things covered as part of my presentation. Please move on to Part-1 and thereafter Part-2 for more detailed analysis and explanation. I would recommend to have a look at other presentation of Virtual ML.Net conference and I am sure you would love them as I did. This was the first edition of Virtual ML.Net and I wish to have many more of these. I am running a telegram [ML.Net](https://t.me/joinchat/IifUJQ_PuYT757Turx-nLg) group for ML.Net enthusiasts, please feel free to join it. I wish a bigger and bolder next edition of Virtual ML.Net. 
+In this post, I have just touched on the things covered as part of my presentation. Please move on to [Part-1](part-1/README.md) and thereafter [Part-2](part-2/README.md) for more detailed analysis and explanation. I would recommend to have a look at other presentation of Virtual ML.Net conference and I am sure you would love them as I did. This was the first edition of Virtual ML.Net and I wish to have many more of these. I am running a telegram [ML.Net](https://t.me/joinchat/IifUJQ_PuYT757Turx-nLg) group for ML.Net enthusiasts, please feel free to join it. I wish a bigger and bolder next edition of Virtual ML.Net. 
 
 Thank you reading this post, if you liked it, please like/comment. It'll encourage me to write more. 
 
@@ -177,5 +177,3 @@ Thank you reading this post, if you liked it, please like/comment. It'll encoura
   - **Twitter :** @praveenraghuvan
   
  Made with :heart: by ML.Net enthusiast
- 
- [Part-1](part-1/README.md)
