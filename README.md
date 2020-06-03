@@ -143,6 +143,7 @@ Visualization is an integral part of EDA. It allows multiple representation of d
 <div align="center">
   <p>Confirmed Vs Deaths Vs Recovered</p>
   <img src=".\assets\visualization-pie.png" alt="Visualization - Pie" style="zoom:80%;" />
+  </br>
   <img src=".\assets\visualization-bar.png" alt="Visualization - Bar" style="zoom:80%;" />
 </div>
 
@@ -174,3 +175,5 @@ Thank you reading this post, if you liked it, please like/comment. It'll encoura
   - **LinkedIn :** https://in.linkedin.com/in/praveenraghuvanshi
   - **Github :** https://github.com/praveenraghuvanshi1512
   - **Twitter :** @praveenraghuvan
+  
+ Made with :heart: by ML.Net enthusiast
