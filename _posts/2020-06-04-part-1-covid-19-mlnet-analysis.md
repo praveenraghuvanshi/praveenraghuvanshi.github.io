@@ -1,7 +1,8 @@
 ---
-layout: default
+layout: post
 comments: true
-title: Part-1 COVID-19 Data Analysis using .Net DataFrame API
+title: "Part-1 COVID-19 Data Analysis using .Net DataFrame API"
+category: data science
 ---
 # Part-1: COVID-19 Data Analysis using .Net DataFrame API
 
