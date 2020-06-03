@@ -1,3 +1,8 @@
+---
+layout: default
+comments: true
+title: Part-1 COVID-19 Data Analysis using .Net DataFrame API
+---
 # Part-1: COVID-19 Data Analysis using .Net DataFrame API
 
 ## COVID-19
