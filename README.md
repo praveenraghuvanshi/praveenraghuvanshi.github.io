@@ -31,7 +31,7 @@ In this section, i'll mainly cover few things covered as part of my presentation
 
 ## Acknowledgement
 
--  Dataset  - [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data)
+- Dataset  - [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data)
 - COVID-19 data visualization using Python - [Akshay Sb](https://www.kaggle.com/akshaysb/covid-19-data-visualization)
 - Organizers - [Bri Achtman](@briacht), [Luis Quintanilla](@ljquintanilla), [Alexander Slotte](@alexslotte) and [Jon Wood](@JWood)
 - Sponsors - Excella and Wintellect
@@ -42,15 +42,18 @@ As per [Wiki](https://en.wikipedia.org/wiki/Coronavirus_disease_2019) **Coronavi
 
 Lets analyze some statistics
 
-#### Number of Confirmed and Deaths as on May, 28, 2020
-
-<img src=".\assets\covid-19-stats-numbers.png" alt="COVID-19 Stats - Numbers" style="zoom:80%;" />
-
+<div align="center">
+  <img src=".\assets\covid-19-stats-numbers.png" alt="COVID-19 Stats - Numbers" style="zoom:80%;" />
+  <p>Number of confirmed cases and deaths as on May 28, 2020</p>
+</div>
 Image source:https://covid19.who.int/
 
 The above image just shows numbers for a particular date and seems to be a static data. It doesn't give any information that could help in making some decisions to bring these numbers down. It would be good, if we can get historical data or a plot to understand the trend.
 
+<div align="center">
 <img src=".\assets\covid-19-stats-plot.png" alt="COVID-19 Plot" style="zoom:70%;" /> 
+<p>Plot for number of confirmed cases and deaths as on May 28, 2020</p>
+</div>
 
 Image source:https://covid19.who.int/
 
@@ -71,16 +74,19 @@ As per [Wiki](https://en.wikipedia.org/wiki/Exploratory_data_analysis),
 *A statistical model can be used or not, but primarily EDA is for seeing what the data can tell us beyond the formal modeling or hypothesis testing task.*"
 
 Its mainly analysis of data which on its own doesn't convey much about it and acts dumb. The analysis is presented in different form through various visualizations which include tables, plots such as bar, pie, scatter etc. 
-
-<img src=".\assets\house.png" alt="EDA - House" style="zoom:80%;" />
+<div align="center">
+  <img src=".\assets\house.png" alt="EDA - House" style="zoom:80%;" />
+</div>
 
 Let me give an analogy here. Consider you just moved to new place and looking to rent a house. In order to buy a house, you'll look for attributes such as number of bedrooms, type(Apartment or villa), locality and crime rate. If someone provides this information in a static manner(specific date), you won't be able to make a decision. You would be interested in history to make a decision. Even that information won't help much, better if its presented in a visual way of table/plots. This will help in making decision quick and relevant.
 
 We'll be using .Net DataFrame API to perform EDA
 
 ## Time Series Analysis
-
-<img src=".\assets\time-series-deaths.png" alt="Time Series - Deaths" style="zoom:80%;" />
+<div align="center">
+  <img src=".\assets\time-series-deaths.png" alt="Time Series - Deaths" style="zoom:80%;" />
+  <p>Number of deaths over time</p>
+</div>
 
 Its the analysis of data organized across units of time. It helps understand past trends and plan for future. There are different types of time series analysis that can be performed such as Trends, Seasonality, Irregularity and Cyclic.
 
@@ -135,9 +141,9 @@ SSA is a powerful framework for decomposing the time-series into trend, seasonal
 
 Visualization is an integral part of EDA. It allows multiple representation of data present in raw format. I have used table and plots (bar, pie, scatter) for visualization. Some of them is shown below
 <div align="center">
-<img src=".\assets\visualization-pie.png" alt="Visualization - Pie" style="zoom:80%;" />
-
-<img src=".\assets\visualization-bar.png" alt="Visualization - Bar" style="zoom:80%;" />
+  <p>Confirmed Vs Deaths Vs Recovered</p>
+  <img src=".\assets\visualization-pie.png" alt="Visualization - Pie" style="zoom:80%;" />
+  <img src=".\assets\visualization-bar.png" alt="Visualization - Bar" style="zoom:80%;" />
 </div>
 
 
