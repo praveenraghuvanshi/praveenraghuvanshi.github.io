@@ -19,7 +19,7 @@
 
 In this tutorial we'll cover below features
 - Load a CSV
-- Metada
+- Metadata
     - Description
     - Info
 - Display records
@@ -34,7 +34,7 @@ For overview, please refer below links
 - [An Introduction to DataFrame](https://devblogs.microsoft.com/dotnet/an-introduction-to-dataframe/)
 - [Exploring the C# Dataframe API](https://www.youtube.com/watch?v=FI3VxXClJ7Y)
 
-[**Part-2**](https://github.com/praveenraghuvanshi1512/covid-19/tree/Part-2/part-2) covers time series analysis and prediction using ML.Net  
+[**Part-2**](https://praveenraghuvanshi1512.github.io/part-2) covers time series analysis and prediction using ML.Net  
 
 ### Summary
 
@@ -44,7 +44,7 @@ Below is the summary of steps we'll be performing
     - Nuget packages
     - Namespaces
     - Constants
-     
+    
 2. Utility Functions
     - Formatters    
 
@@ -52,9 +52,9 @@ Below is the summary of steps we'll be performing
     - Download Dataset from [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data)
     - Load dataset in DataFrame
     
-4. Analyse Data
+4. Analyze Data
     - Date Range
-    - Display Datset - display(dataframe)
+    - Display Dataset - display(dataframe)
     - Display Top 5 Rows - dataframe.Head(5)
     - Display Random 6 Rows - dataframe.Sample(6)    
     - Display Dataset Statistics - dataframe.Description()
@@ -72,7 +72,8 @@ Below is the summary of steps we'll be performing
     - India
         - Confirmed Vs Deaths Vs Recovered
         
-**Note** : Graphs/Plots may not render in GitHub due to secutiry reasons, however if you run this notebook locally/binder they will render.
+
+**Note** : Graphs/Plots may not render in GitHub due to security reasons, however if you run this notebook locally/binder they will render.
 
 ### 1. Define Application wide Items
 
@@ -93,113 +94,10 @@ Below is the summary of steps we'll be performing
 ```
 
 
-
-<div>
-    <div id='dotnet-interactive-this-cell-26020.9db5815ddc4440fc87b90c9fa4ccecdd' style='display: none'>
-        The below script needs to be able to find the current output cell; this is an easy method to get it.
-    </div>
-    <script type='text/javascript'>
-// ensure `require` is available globally
-if (typeof require !== typeof Function || typeof require.config !== typeof Function) {
-    let require_script = document.createElement('script');
-    require_script.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js');
-    require_script.setAttribute('type', 'text/javascript');
-    require_script.onload = function () {
-        loadDotnetInteractiveApi();
-    };
-
-    document.getElementsByTagName('head')[0].appendChild(require_script);
-}
-else {
-    loadDotnetInteractiveApi();
-}
-
-async function probeAddresses(probingAddresses) {
-    function timeout(ms, promise) {
-        return new Promise(function (resolve, reject) {
-            setTimeout(function () {
-                reject(new Error('timeout'))
-            }, ms)
-            promise.then(resolve, reject)
-        })
-    }
-
-    if (Array.isArray(probingAddresses)) {
-        for (let i = 0; i < probingAddresses.length; i++) {
-
-            let rootUrl = probingAddresses[i];
-
-            if (!rootUrl.endsWith('/')) {
-                rootUrl = `${rootUrl}/`;
-            }
-
-            try {
-                let response = await timeout(1000, fetch(`${rootUrl}discovery`, {
-                    method: 'POST',
-                    cache: 'no-cache',
-                    mode: 'cors',
-                    timeout: 1000,
-                    headers: {
-                        'Content-Type': 'text/plain'
-                    },
-                    body: probingAddresses[i]
-                }));
-
-                if (response.status == 200) {
-                    return rootUrl;
-                }
-            }
-            catch (e) { }
-        }
-    }
-}
-
-function loadDotnetInteractiveApi() {
-    probeAddresses(["http://10.92.46.148:1000/", "http://172.29.64.1:1000/", "http://169.254.46.139:1000/", "http://192.168.1.5:1000/", "http://127.0.0.1:1000/"])
-        .then((root) => {
-            // use probing to find host url and api resources
-            // load interactive helpers and language services
-            let dotnet_require = require.config({
-                context: '26020.9db5815ddc4440fc87b90c9fa4ccecdd',
-                paths: {
-                    'dotnet-interactive': `${root}resources`
-                }
-            }) || require;
-            if (!window.dotnet_require) {
-                window.dotnet_require = dotnet_require;
-            }
-        
-            dotnet_require([
-                    'dotnet-interactive/dotnet-interactive'
-                ],
-                function (dotnet) {
-                    dotnet.init(window);
-                },
-                function (error) {
-                    console.log(error);
-                }
-            );
-        })
-        .catch(error => {console.log(error);});
-    }
-    </script>
-</div>
-
-
-
     Installed package XPlot.Plotly version 3.0.1
-
-
-
     Installed package Microsoft.Data.Analysis version 0.4.0
-
-
-
-    Installed package Microsoft.ML version 1.5.0
-
-
-
     Installed package CsvHelper version 15.0.5
+    Installed package Microsoft.ML version 1.5.0
 
 
 #### Namespaces
@@ -350,8 +248,7 @@ if (!File.Exists(originalFileName))
 }
 ```
 
-
-    https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports//05-27-2020.csv
+https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports//05-27-2020.csv
 
 
 #### Load dataset in DataFrame
@@ -370,10 +267,7 @@ display(newFileName);
 CreateCsvAndReplaceSeparatorInCells(originalFileName, newFileName, SEPARATOR, SEPARATOR_REPLACEMENT);
 ```
 
-
-    05-27-2020_new.csv
-
-
+05-27-2020_new.csv
 
 ```C#
 var covid19Dataframe = DataFrame.LoadCsv(newFileName);
@@ -442,7 +336,7 @@ covid19Dataframe.Sample(6)
 
 
 
-<table><thead><th><i>index</i></th><th>FIPS</th><th>Admin2</th><th>Province_State</th><th>Country_Region</th><th>Last_Update</th><th>Lat</th><th>Long_</th><th>Confirmed</th><th>Deaths</th><th>Recovered</th><th>Active</th><th>Combined_Key</th></thead><tbody><tr><td>0</td><td>17065</td><td>Hamilton</td><td>Illinois</td><td>US</td><td>2020-05-28 02:32:31</td><td>38.081635</td><td>-88.53883</td><td>2</td><td>0</td><td>0</td><td>2</td><td>Hamilton_ Illinois_ US</td></tr><tr><td>1</td><td>24037</td><td>St. Mary&#39;s</td><td>Maryland</td><td>US</td><td>2020-05-28 02:32:31</td><td>38.300583</td><td>-76.60629</td><td>400</td><td>16</td><td>0</td><td>384</td><td>St. Mary&#39;s_ Maryland_ US</td></tr><tr><td>2</td><td>18047</td><td>Franklin</td><td>Indiana</td><td>US</td><td>2020-05-28 02:32:31</td><td>39.41425</td><td>-85.06062</td><td>106</td><td>8</td><td>0</td><td>98</td><td>Franklin_ Indiana_ US</td></tr><tr><td>3</td><td>39013</td><td>Belmont</td><td>Ohio</td><td>US</td><td>2020-05-28 02:32:31</td><td>40.01626</td><td>-80.99241</td><td>403</td><td>12</td><td>0</td><td>391</td><td>Belmont_ Ohio_ US</td></tr><tr><td>4</td><td>28023</td><td>Clarke</td><td>Mississippi</td><td>US</td><td>2020-05-28 02:32:31</td><td>32.041584</td><td>-88.688965</td><td>135</td><td>17</td><td>0</td><td>118</td><td>Clarke_ Mississippi_ US</td></tr><tr><td>5</td><td>37049</td><td>Craven</td><td>North Carolina</td><td>US</td><td>2020-05-28 02:32:31</td><td>35.118332</td><td>-77.083984</td><td>192</td><td>4</td><td>0</td><td>188</td><td>Craven_ North Carolina_ US</td></tr></tbody></table>
+<table><thead><th><i>index</i></th><th>FIPS</th><th>Admin2</th><th>Province_State</th><th>Country_Region</th><th>Last_Update</th><th>Lat</th><th>Long_</th><th>Confirmed</th><th>Deaths</th><th>Recovered</th><th>Active</th><th>Combined_Key</th></thead><tbody><tr><td>0</td><td>18025</td><td>Crawford</td><td>Indiana</td><td>US</td><td>2020-05-28 02:32:31</td><td>38.288143</td><td>-86.44519</td><td>23</td><td>0</td><td>0</td><td>23</td><td>Crawford_ Indiana_ US</td></tr><tr><td>1</td><td>51065</td><td>Fluvanna</td><td>Virginia</td><td>US</td><td>2020-05-28 02:32:31</td><td>37.84158</td><td>-78.27715</td><td>87</td><td>6</td><td>0</td><td>81</td><td>Fluvanna_ Virginia_ US</td></tr><tr><td>2</td><td>13241</td><td>Rabun</td><td>Georgia</td><td>US</td><td>2020-05-28 02:32:31</td><td>34.883896</td><td>-83.403046</td><td>17</td><td>1</td><td>0</td><td>16</td><td>Rabun_ Georgia_ US</td></tr><tr><td>3</td><td>12003</td><td>Baker</td><td>Florida</td><td>US</td><td>2020-05-28 02:32:31</td><td>30.3306</td><td>-82.284676</td><td>29</td><td>3</td><td>0</td><td>26</td><td>Baker_ Florida_ US</td></tr><tr><td>4</td><td>21133</td><td>Letcher</td><td>Kentucky</td><td>US</td><td>2020-05-28 02:32:31</td><td>37.123066</td><td>-82.85346</td><td>4</td><td>0</td><td>0</td><td>4</td><td>Letcher_ Kentucky_ US</td></tr><tr><td>5</td><td>12077</td><td>Liberty</td><td>Florida</td><td>US</td><td>2020-05-28 02:32:31</td><td>30.23766</td><td>-84.88293</td><td>209</td><td>0</td><td>0</td><td>209</td><td>Liberty_ Florida_ US</td></tr></tbody></table>
 
 
 
@@ -496,7 +390,7 @@ From the above description table, we could see negative value for Active cases w
 
 **Active = Confirmed - Deaths - Recovered**
 
-In order to check for invalid active cases, we'll use DataFrame **Filter** to retrive active column values whose value is less than 0.0
+In order to check for invalid active cases, we'll use DataFrame **Filter** to retrieve active column values whose value is less than 0.0
 
 
 ```C#
@@ -558,7 +452,7 @@ var totalDeaths = Convert.ToDouble(deaths.Sum());
 var totaRecovered = Convert.ToDouble(recovered.Sum());
 ```
 
-##### Confirmed Vs Deaths Vs Receovered cases
+##### Confirmed Vs Deaths Vs Recovered cases
 
 
 ```C#
@@ -571,33 +465,7 @@ display(Chart.Plot(
 ));
 ```
 
-
-<div id="b228b134-4faa-49a3-8d80-0bfdfbd0f5a7" style="width: 900px; height: 500px;"></div>
-<script type="text/javascript">
-
-var renderPlotly = function() {
-    var xplotRequire = require.config({context:'xplot-3.0.1',paths:{plotly:'https://cdn.plot.ly/plotly-1.49.2.min'}}) || require;
-    xplotRequire(['plotly'], function(Plotly) {
-
-            var data = [{"type":"pie","labels":["Confirmed","Deaths","Recovered"],"values":[5650943.0,350991.0,1715652.0]}];
-            var layout = "";
-            Plotly.newPlot('b228b134-4faa-49a3-8d80-0bfdfbd0f5a7', data, layout);
-        
-});
-};
-if ((typeof(require) !==  typeof(Function)) || (typeof(require.config) !== typeof(Function))) {
-    var script = document.createElement("script"); 
-    script.setAttribute("src", "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js");
-    script.onload = function(){
-        renderPlotly();
-    };
-    document.getElementsByTagName("head")[0].appendChild(script); 
-}
-else {
-    renderPlotly();
-}
-</script>
-
+<img src=".\assets\pie-confirmed-recovered-deaths.png" alt="Confirmed Vs Deaths Vs Recovered" style="zoom:80%;" />
 
 
 ##### Top 5 Countries with Confirmed cases
@@ -606,7 +474,7 @@ In order to get top 5 countries data, I have used DataFrame's GroupBy, Sum, Orde
 
 
 ```C#
-// The data for top 5 countries is not present in the csv file.
+![top-5-confirmed-countries-global](C:\Users\lenovo\Downloads\covid-19-master\covid-19-master\part-1\assets\top-5-confirmed-countries-global.png)// The data for top 5 countries is not present in the csv file.
 // In order to get that, first DataFrame's GROUPBY is used aginst the country.
 // Then it was aggregated using SUM on Confirmed column.
 // In the last, ORDERBYDESCENDING is used to get the top five countries.
@@ -637,32 +505,7 @@ chart.WithTitle(title);
 display(chart);
 ```
 
-
-<div id="66d209f1-ee9e-4e40-827c-d504021321ff" style="width: 900px; height: 500px;"></div>
-<script type="text/javascript">
-
-var renderPlotly = function() {
-    var xplotRequire = require.config({context:'xplot-3.0.1',paths:{plotly:'https://cdn.plot.ly/plotly-1.49.2.min'}}) || require;
-    xplotRequire(['plotly'], function(Plotly) {
-
-            var data = [{"type":"bar","x":["US","Brazil","Russia","United Kingdom","Italy"],"y":[1699082,411821,370680,268619,231139]}];
-            var layout = {"title":"Top 5 Countries : Confirmed"};
-            Plotly.newPlot('66d209f1-ee9e-4e40-827c-d504021321ff', data, layout);
-        
-});
-};
-if ((typeof(require) !==  typeof(Function)) || (typeof(require.config) !== typeof(Function))) {
-    var script = document.createElement("script"); 
-    script.setAttribute("src", "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js");
-    script.onload = function(){
-        renderPlotly();
-    };
-    document.getElementsByTagName("head")[0].appendChild(script); 
-}
-else {
-    renderPlotly();
-}
-</script>
+<img src="assets\top-5-confirmed-countries-global.png" alt="Top-5 Countries : Confirmed" style="zoom:80%;" />
 
 
 
@@ -697,32 +540,8 @@ chart.WithTitle(title);
 display(chart);
 ```
 
+<img src="assets\top-5-deaths-countries-global.png" alt="Top-5 Countries: Deaths" style="zoom:80%;" />
 
-<div id="81954113-bf4d-4204-ba2f-6f1f16e84260" style="width: 900px; height: 500px;"></div>
-<script type="text/javascript">
-
-var renderPlotly = function() {
-    var xplotRequire = require.config({context:'xplot-3.0.1',paths:{plotly:'https://cdn.plot.ly/plotly-1.49.2.min'}}) || require;
-    xplotRequire(['plotly'], function(Plotly) {
-
-            var data = [{"type":"bar","x":["US","United Kingdom","Italy","France","Brazil"],"y":[100007,37542,33072,28599,25598]}];
-            var layout = {"title":"Top 5 Countries : Deaths"};
-            Plotly.newPlot('81954113-bf4d-4204-ba2f-6f1f16e84260', data, layout);
-        
-});
-};
-if ((typeof(require) !==  typeof(Function)) || (typeof(require.config) !== typeof(Function))) {
-    var script = document.createElement("script"); 
-    script.setAttribute("src", "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js");
-    script.onload = function(){
-        renderPlotly();
-    };
-    document.getElementsByTagName("head")[0].appendChild(script); 
-}
-else {
-    renderPlotly();
-}
-</script>
 
 
 
@@ -757,44 +576,18 @@ chart.WithTitle(title);
 display(chart);
 ```
 
-
-<div id="6de150a8-f36e-472d-825e-86643d58f28d" style="width: 900px; height: 500px;"></div>
-<script type="text/javascript">
-
-var renderPlotly = function() {
-    var xplotRequire = require.config({context:'xplot-3.0.1',paths:{plotly:'https://cdn.plot.ly/plotly-1.49.2.min'}}) || require;
-    xplotRequire(['plotly'], function(Plotly) {
-
-            var data = [{"type":"bar","x":["Germany","Italy","Russia","Turkey","Iran"],"y":[162820,147101,142208,122793,111176]}];
-            var layout = {"title":"Top 5 Countries : Recovered"};
-            Plotly.newPlot('6de150a8-f36e-472d-825e-86643d58f28d', data, layout);
-        
-});
-};
-if ((typeof(require) !==  typeof(Function)) || (typeof(require.config) !== typeof(Function))) {
-    var script = document.createElement("script"); 
-    script.setAttribute("src", "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js");
-    script.onload = function(){
-        renderPlotly();
-    };
-    document.getElementsByTagName("head")[0].appendChild(script); 
-}
-else {
-    renderPlotly();
-}
-</script>
-
+<img src="assets\top-5-recovered-countries-global.png" alt="Top-5 Countries : Recovered" style="zoom:80%;" />
 
 
 #### India
 
-##### Confirmed Vs Deaths Vs Receovered cases
+##### Confirmed Vs Deaths Vs Recovered cases
 
-Filering on Country column with INDIA as value
+Filtering on Country column with INDIA as value
 
 
 ```C#
-// Filering on Country column with INDIA as value
+// Filtering on Country column with INDIA as value
 
 PrimitiveDataFrameColumn<bool> indiaFilter = covid19Dataframe.Columns[COUNTRY].ElementwiseEquals(INDIA);
 var indiaDataFrame = covid19Dataframe.Filter(indiaFilter);
@@ -819,43 +612,20 @@ display(Chart.Plot(
 ));
 ```
 
-
-<div id="3776ae8c-5925-4e93-bb5b-d5c24d4deb84" style="width: 900px; height: 500px;"></div>
-<script type="text/javascript">
-
-var renderPlotly = function() {
-    var xplotRequire = require.config({context:'xplot-3.0.1',paths:{plotly:'https://cdn.plot.ly/plotly-1.49.2.min'}}) || require;
-    xplotRequire(['plotly'], function(Plotly) {
-
-            var data = [{"type":"pie","labels":["Confirmed","Deaths","Recovered"],"values":[158086.0,4534.0,67749.0]}];
-            var layout = "";
-            Plotly.newPlot('3776ae8c-5925-4e93-bb5b-d5c24d4deb84', data, layout);
-        
-});
-};
-if ((typeof(require) !==  typeof(Function)) || (typeof(require.config) !== typeof(Function))) {
-    var script = document.createElement("script"); 
-    script.setAttribute("src", "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js");
-    script.onload = function(){
-        renderPlotly();
-    };
-    document.getElementsByTagName("head")[0].appendChild(script); 
-}
-else {
-    renderPlotly();
-}
-</script>
+<img src="assets\pie-confirmed-recovered-deaths-india" alt="India - Confirmed Vs Recovered Vs Deaths" style="zoom:80%;" />
 
 
 
 ## Conclusion
 
-I hope you have enjoyed reading the notebook, and might have got some idea on the powerful features of DataFrame in .Net. Datascience capabilities are emerging fast in the .Net ecosystem which abstracts lot of complexity present in the field. The focus of this notebook is data analysis and there is nothing present from a Machine Learning perspective such as making a prediction. In [Part-2](https://github.com/praveenraghuvanshi1512/covid-19/tree/Part-2/part-2), I have done time series analysis and predictions using ML.Net 
+I hope you have enjoyed reading the notebook, and might have got some idea on the powerful features of DataFrame in .Net. Data science capabilities are emerging fast in the .Net ecosystem which abstracts lot of complexity present in the field. The focus of this notebook is data analysis and there is nothing present from a Machine Learning perspective such as making a prediction. In [Part-2](https://praveenraghuvanshi1512.github.io/part-2), I have done time series analysis and predictions using ML.Net 
 
 Feedback/Suggestion are welcome. Please reach out to me through below channels
 
+Source code : https://github.com/praveenraghuvanshi1512/covid-19
+
 **Contact**
- 
+
 **LinkedIn :** https://in.linkedin.com/in/praveenraghuvanshi  
 **Github   :** https://github.com/praveenraghuvanshi1512  
 **Twitter  :** @praveenraghuvan
