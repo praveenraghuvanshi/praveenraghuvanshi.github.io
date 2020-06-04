@@ -27,7 +27,7 @@ twitter_username: praveenraghuvan
 github_username:  praveenraghuvanshi1512
 
 # Build settings
-theme: jekyll-theme-architect
+theme: minima
 plugins:
   - jekyll-feed
 
