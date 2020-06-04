@@ -1,4 +1,17 @@
-# [Virtual ML.Net](https://virtualml.net/) : COVID-19 Exploratory Data Analysis using .Net DataFrame API (C#) - Introduction
+---
+
+layout: post
+comments: true
+title: "Virtual ML.Net: Introduction"
+category: data science
+
+---
+
+# [Virtual ML.Net](https://virtualml.net/) :  Introduction
+
+<div align="center">
+  <img src="/images/virtualmlnet-intro/virtualmlnet-praveen.png" alt="Virtual ML.Net - Praveen" style="zoom:80%;" />
+</div>
 
 Last week, I had the privilege of speaking at an awesome event [Virtual ML.Net](https://virtualml.net/). The event was totally virtual and organized and participated by ML.Net enthusiasts. 
 
@@ -24,10 +37,10 @@ Key highlights of the event
 
 My presentation was on **COVID-19 Exploratory Data Analysis using .Net Dataframe API (C#)**. It was divided into two parts as given below.
 
-- **Part-1:** [COVID-19 Data Analysis using .Net DataFrame API](part-1/README.md)
-- **Part-2:** [COVID-19 Prediction using ML.Net framework](part-2/README.md)
+- **Part-1:** [COVID-19 Data Analysis using .Net DataFrame API]({% link _posts/2020-06-04-virtual-mlnet-part-1-covid-19-mlnet-analysis.md %})
+- **Part-2:** [COVID-19 Prediction using ML.Net framework]({% link _posts/2020-06-04-virtual-mlnet-part-2-covid-19-mlnet-prediction.md %})
 
-In this section, i'll mainly cover few things covered as part of my presentation such as COVID-19, DataFrame API(EDA), ML.Net(Prediction). It'll be a brief introduction to the topics, for working solution, please refer Part-1 and Part-2. [Part-1](part-1/README.md) covers exploratory data analysis on COVID dataset for a particular day. [Part-2](part-2/README.md) covers data analysis and prediction/forecasting for next 7 days using time-series COVID dataset. We'll leverage recently introduced support for C# in Jupyter Notebook
+In this section, I'll mainly cover few things covered as part of my presentation such as COVID-19, DataFrame API(EDA), ML.Net(Prediction). It'll be a brief introduction to the topics, for working solution, please refer Part-1 and Part-2. [Part-1]({% link _posts/2020-06-04-virtual-mlnet-part-1-covid-19-mlnet-analysis.md %}) covers exploratory data analysis on COVID dataset for a particular day. [Part-2]({% link _posts/2020-06-04-virtual-mlnet-part-2-covid-19-mlnet-prediction.md %}) covers data analysis and prediction/forecasting for next 7 days using time-series COVID dataset. We'll leverage recently introduced support for C# in Jupyter Notebook
 
 ## Acknowledgement
 
@@ -43,17 +56,19 @@ As per [Wiki](https://en.wikipedia.org/wiki/Coronavirus_disease_2019) **Coronavi
 Lets analyze some statistics
 
 <div align="center">
-  <img src=".\assets\covid-19-stats-numbers.png" alt="COVID-19 Stats - Numbers" style="zoom:80%;" />
+  <img src="/images/virtualmlnet-intro/covid-19-stats-numbers.png" alt="COVID-19 Stats - Numbers" style="zoom:80%;" />
   <p>Number of confirmed cases and deaths as on May 28, 2020</p>
 </div>
+
 Image source:https://covid19.who.int/
 
 The above image just shows numbers for a particular date and seems to be a static data. It doesn't give any information that could help in making some decisions to bring these numbers down. It would be good, if we can get historical data or a plot to understand the trend.
 
 <div align="center">
-<img src=".\assets\covid-19-stats-plot.png" alt="COVID-19 Plot" style="zoom:70%;" /> 
+<img src="/images/virtualmlnet-intro/covid-19-stats-plot.png" alt="COVID-19 Plot" style="zoom:70%;" /> 
 <p>Plot for number of confirmed cases and deaths as on May 28, 2020</p>
 </div>
+
 
 Image source:https://covid19.who.int/
 
@@ -61,7 +76,7 @@ The above plot is better compared to only numbers. Through this, we could see th
 
 Similarly, different plots as shown below gives information in a way that can be analyzed and interpreted for making better decisions and take precautionary actions.
 
-<img src=".\assets\covid-19-stats-plot-2.png" alt="COVID-19 Plots" style="zoom:80%;" /> 
+<img src="/images/virtualmlnet-intro/covid-19-stats-plot-2.png" alt="COVID-19 Plots" style="zoom:80%;" /> 
 
 Image Source: https://slides.ourworldindata.org/2020_pandemic/2020_pandemic#/title-slide
 
@@ -75,8 +90,9 @@ As per [Wiki](https://en.wikipedia.org/wiki/Exploratory_data_analysis),
 
 Its mainly analysis of data which on its own doesn't convey much about it and acts dumb. The analysis is presented in different form through various visualizations which include tables, plots such as bar, pie, scatter etc. 
 <div align="center">
-  <img src=".\assets\house.png" alt="EDA - House" style="zoom:80%;" />
+  <img src="/images/virtualmlnet-intro/house.png" alt="EDA - House" style="zoom:80%;" />
 </div>
+
 
 Let me give an analogy here. Consider you just moved to new place and looking to rent a house. In order to buy a house, you'll look for attributes such as number of bedrooms, type(Apartment or villa), locality and crime rate. If someone provides this information in a static manner(specific date), you won't be able to make a decision. You would be interested in history to make a decision. Even that information won't help much, better if its presented in a visual way of table/plots. This will help in making decision quick and relevant.
 
@@ -84,9 +100,10 @@ We'll be using .Net DataFrame API to perform EDA
 
 ## Time Series Analysis
 <div align="center">
-  <img src=".\assets\time-series-deaths.png" alt="Time Series - Deaths" style="zoom:80%;" />
+  <img src="/images/virtualmlnet-intro/time-series-deaths.png" alt="Time Series - Deaths" style="zoom:80%;" />
   <p>Number of deaths over time</p>
 </div>
+
 
 Its the analysis of data organized across units of time. It helps understand past trends and plan for future. There are different types of time series analysis that can be performed such as Trends, Seasonality, Irregularity and Cyclic.
 
@@ -96,11 +113,11 @@ I have applied this to our COVID-19 dataset and plot a chart on the number of co
 
 A DataFrame is a two-dimensional data structure holding information in a tabular way similar to spreadsheet. It has rows and columns, with columns having data of same type. It's mainly used for statistical analysis on the dataset and a great tool for performing exploratory data analysis by data scientists. Its present in many languages such as Python and R. For e.g, on the left side in below image, the data is represented as in spreadsheet. The same is represented on right when its loaded by Python API. The API's present in a language allows performing operations similar to spreadsheet such as filtering, grouping, sorting and many more.
 
-<img src=".\assets\dataframe.png" alt="DataFrame" style="zoom:80%;" />
+<img src="/images/virtualmlnet-intro/dataframe.png" alt="DataFrame" style="zoom:80%;" />
 
 ### .Net DataFrame
 
-DataFrame has been a great tool of Data scientists for performing exploratory data analysis. There was nothing present in Microsoft ecosystem till December'19 when it was introduced for the first time in .Net ecosystem and allowed .Net developers to perform EDA. I have used to perform EDA on COVID-19 dataset and its present in Part-2. Some of the attributes of Dataframe are given as below
+DataFrame has been a great tool of Data scientists for performing exploratory data analysis. There was nothing present in Microsoft ecosystem till December'19 when it was introduced for the first time in .Net ecosystem and allowed .Net developers to perform EDA. I have used to perform EDA on COVID-19 dataset and its present in Part-2. Some of the attributes of DataFrame are given as below
 
 -  A collection of Columns
 - In-memory representation of structured data
@@ -108,7 +125,7 @@ DataFrame has been a great tool of Data scientists for performing exploratory da
 - Features
   - Load dataset from Csv
   - Row/Column Selection
-  - Join/Merge Dataframe
+  - Join/Merge DataFrame
   - GroupBy
   - Handling Null values
 
@@ -142,22 +159,23 @@ SSA is a powerful framework for decomposing the time-series into trend, seasonal
 Visualization is an integral part of EDA. It allows multiple representation of data present in raw format. I have used table and plots (bar, pie, scatter) for visualization. Some of them is shown below
 <div align="center">
   <p>Confirmed Vs Deaths Vs Recovered</p>
-  <img src=".\assets\visualization-pie.png" alt="Visualization - Pie" style="zoom:80%;" />
+  <img src="/images/virtualmlnet-intro/visualization-pie.png" alt="Visualization - Pie" style="zoom:80%;" />
   </br>
-  <img src=".\assets\visualization-bar.png" alt="Visualization - Bar" style="zoom:80%;" />
+  <img src="/images/virtualmlnet-intro/visualization-bar.png" alt="Visualization - Bar" style="zoom:80%;" />
 </div>
+
 
 
 
 #### Prediction : Before and After
 
-<img src=".\assets\visualization-prediction.png" alt="Prediction- Before and After" style="zoom:80%;" />
+<img src="/images/virtualmlnet-intro/visualization-prediction.png" alt="Prediction- Before and After" style="zoom:80%;" />
 
 
 
 ## Conclusion
 
-In this post, I have just touched on the things covered as part of my presentation. Please move on to [Part-1](part-1/README.md) and thereafter [Part-2](part-2/README.md) for more detailed analysis and explanation. I would recommend to have a look at other presentation of Virtual ML.Net conference and I am sure you would love them as I did. This was the first edition of Virtual ML.Net and I wish to have many more of these. I am running a telegram [ML.Net](https://t.me/joinchat/IifUJQ_PuYT757Turx-nLg) group for ML.Net enthusiasts, please feel free to join it. I wish a bigger and bolder next edition of Virtual ML.Net. 
+In this post, I have just touched on the things covered as part of my presentation. Please move on to [Part-1]({% link _posts/2020-06-04-virtual-mlnet-part-1-covid-19-mlnet-analysis.md %}) and thereafter [Part-2]({% link _posts/2020-06-04-virtual-mlnet-part-2-covid-19-mlnet-prediction.md %}) for more detailed analysis and explanation. I would recommend to have a look at other presentation of Virtual ML.Net conference and I am sure you would love them as I did. This was the first edition of Virtual ML.Net and I wish to have many more of these. I am running a telegram [ML.Net](https://t.me/joinchat/IifUJQ_PuYT757Turx-nLg) group for ML.Net enthusiasts, please feel free to join it. I wish a bigger and bolder next edition of Virtual ML.Net. 
 
 Thank you reading this post, if you liked it, please like/comment. It'll encourage me to write more. 
 
@@ -167,8 +185,8 @@ Thank you reading this post, if you liked it, please like/comment. It'll encoura
   - [Virtual ML.Net](https://virtualml.net/)
   - [Slides](https://github.com/virtualmlnet/presentations-2020)
   - [Video](https://www.youtube.com/watch?v=6LMaFRJyuKg)
-  - [Part-1](part-1/README.md)
-  - [Part-2](part-2/README.md)
+  - [Part-1]({% link _posts/2020-06-04-virtual-mlnet-part-1-covid-19-mlnet-analysis.md %})
+  - [Part-2]({% link _posts/2020-06-04-virtual-mlnet-part-2-covid-19-mlnet-prediction.md %})
   - [Github](https://github.com/praveenraghuvanshi1512/TechnicalSessions/tree/master/31052020-virtualmlnet)
   - [ML.Net Telegram group](https://t.me/joinchat/IifUJQ_PuYT757Turx-nLg)
 - Contact
@@ -176,4 +194,5 @@ Thank you reading this post, if you liked it, please like/comment. It'll encoura
   - **Github :** https://github.com/praveenraghuvanshi1512
   - **Twitter :** @praveenraghuvan
   
+
  Made with :heart: by ML.Net enthusiast
