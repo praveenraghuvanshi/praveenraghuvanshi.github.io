@@ -131,7 +131,7 @@ const string TOTAL_CONFIRMED_COLUMN = "TotalConfirmed";
 const string DATE_COLUMN = "Date";
 ```
 
-### 2. Utility Functions - TBR
+### 2. Utility Functions
 
 #### Formatters
 
