@@ -12,7 +12,7 @@ category: data science
 ## COVID-19
 - As per [Wiki](https://en.wikipedia.org/wiki/Coronavirus_disease_2019) **Coronavirus disease 2019** (**COVID-19**) is an infectious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The disease was first identified in 2019 in Wuhan, the capital of China's Hubei province, and has since spread globally, resulting in the ongoing 2019–20 coronavirus pandemic.
 - The virus had caused a pandemic across the globe and spreading/affecting most of the nations. 
-- The purpose of notebook is to visualize the trends of virus spread in various countries and explore features present in DataFrame and ML.Net
+- The purpose of notebook is to visualize the number of confirmed cases over time and predicting it for next 7 days using time series in ML.Net
 
 ### Acknowledgement
 - [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data) for dataset
