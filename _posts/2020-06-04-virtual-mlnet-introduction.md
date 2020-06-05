@@ -177,7 +177,9 @@ Visualization is an integral part of EDA. It allows multiple representation of d
 
 In this post, I have just touched on the things covered as part of my presentation. Please move on to [Part-1]({% link _posts/2020-06-04-virtual-mlnet-part-1-covid-19-mlnet-analysis.md %}) and thereafter [Part-2]({% link _posts/2020-06-04-virtual-mlnet-part-2-covid-19-mlnet-prediction.md %}) for more detailed analysis and explanation. I would recommend to have a look at other presentation of Virtual ML.Net conference and I am sure you would love them as I did. This was the first edition of Virtual ML.Net and I wish to have many more of these. I am running a telegram [ML.Net](https://t.me/joinchat/IifUJQ_PuYT757Turx-nLg) group for ML.Net enthusiasts, please feel free to join it. I wish a bigger and bolder next edition of Virtual ML.Net. 
 
-Thank you for reading this post.
+**Source Code:**  https://github.com/praveenraghuvanshi1512/covid-19
+
+
 If you liked it, please like/comment at [Comments](https://github.com/praveenraghuvanshi1512/TechnicalSessions/issues/1). It'll encourage me to write more. 
 
 ## Links
