@@ -626,7 +626,9 @@ display(Chart.Plot(
 
 I hope you have enjoyed reading the notebook, and might have got some idea on the powerful features of DataFrame in .Net. Data science capabilities are emerging fast in the .Net ecosystem which abstracts lot of complexity present in the field. The focus of this notebook is data analysis and there is nothing present from a Machine Learning perspective such as making a prediction. In [Part-2]({% link _posts/2020-06-04-virtual-mlnet-part-2-covid-19-mlnet-prediction.md %}), I have done time series analysis and predictions using ML.Net 
 
-Source code : https://github.com/praveenraghuvanshi1512/covid-19
+**Source Code:**  https://github.com/praveenraghuvanshi1512/covid-19
+
+
 If you liked it, please like/comment at [Comments](https://github.com/praveenraghuvanshi1512/TechnicalSessions/issues/1). It'll encourage me to write more. 
 
 **Contact**
