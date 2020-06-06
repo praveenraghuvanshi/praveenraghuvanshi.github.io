@@ -22,6 +22,7 @@ Key highlights of the event
 - Awesome 2-day sessions covering breadth and depth of topics around ML.Net
 - 1-day Hands-on Workshop with multiple labs
 - Global Speakers covering 5 continents and 6 countries
+- Mix of technical sessions, labs and case studies
 - Sessions
   - AI Ethics: Theory to adoption
   - Machine learning simplified for developers with ML.Net
