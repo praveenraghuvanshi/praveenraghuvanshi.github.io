@@ -443,15 +443,15 @@ Comparing the plots before and after prediction, it seems our ML model has perfo
 
 I hope you have enjoyed reading the notebook, and might have got some idea on the powerful framework ML.Net. ML.Net is a very fast emerging framework for .Net developers which abstracts lot of complexity present in the field of Data science and Machine Learning. The focus of Part-2 notebook is leverage ML.Net for making predictions using time-series API. The model generated can be saved as a zip file and used in different applications.
 
-**Source Code:**  https://github.com/praveenraghuvanshi1512/covid-19
+**Source Code:**  https://github.com/praveenraghuvanshi/covid-19
 
 
-If you liked it, please like/comment at [Comments](https://github.com/praveenraghuvanshi1512/TechnicalSessions/issues/1). It'll encourage me to write more. 
+If you liked it, please like/comment at [Comments](https://github.com/praveenraghuvanshi/TechnicalSessions/issues/1). It'll encourage me to write more. 
 
 **Contact**
 
 **LinkedIn :** https://in.linkedin.com/in/praveenraghuvanshi  
-**Github   :** https://github.com/praveenraghuvanshi1512  
+**Github   :** https://github.com/praveenraghuvanshi  
 **Twitter  :** @praveenraghuvan
 
 

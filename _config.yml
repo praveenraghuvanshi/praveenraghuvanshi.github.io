@@ -20,11 +20,11 @@
 
 title: Welcome to Praveen's Blog!
 email: praveentechophile@gmail.com
-description: Opinions on AI/ML, Data science, Cloud Computing, Distributed architecture and .Net 
+description: Opinions around AI/ML, Data science, Cloud Computing, Distributed architecture and .Net 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://praveenraghuvanshi1512.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://praveenraghuvanshi.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: praveenraghuvan
-github_username:  praveenraghuvanshi1512
+github_username:  praveenraghuvanshi
 
 # Build settings
 theme: minima
