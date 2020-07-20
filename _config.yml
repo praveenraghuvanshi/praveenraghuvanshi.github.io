@@ -27,16 +27,9 @@ twitter_username: praveenraghuvan
 github_username:  praveenraghuvanshi
 
 # Build settings
-# theme: minima
-remote_theme: "mmistakes/minimal-mistakes@4.19.3"
-minimal_mistakes_skin: default
-search: true
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
-timezone: "Asia/Kolkata" # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-include-cache
 
 # Exclude from processing.
 # The following items will not be processed, by default.
