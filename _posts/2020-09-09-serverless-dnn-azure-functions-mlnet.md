@@ -16,7 +16,7 @@ If you prefer video, please visit [Serverless ANZ 2020](https://www.youtube.com/
 
 ## Serverless
 
-<img src="../images/serverless-dnn-azure-functions-ml-dotnet/serverless-computing.png" alt="Serverless computing" style="zoom:80%;" />
+<img src="/images/serverless-dnn-azure-functions-ml-dotnet/serverless-computing.png" alt="Serverless computing" style="zoom:80%;" />
 
 ​					src: https://parkardigital.com/serverless-cloud-computing/
 
@@ -24,7 +24,7 @@ Serverless is an execution model where the cloud provider such as AWS, Azure or 
 
 ## Azure Functions
 
-<img src="../images/serverless-dnn-azure-functions-ml-dotnet/azure-function-img.png" alt="Azure Functions" style="zoom:80%;" />
+<img src="/images/serverless-dnn-azure-functions-ml-dotnet/azure-function-img.png" alt="Azure Functions" style="zoom:80%;" />
 
 
 
@@ -34,19 +34,19 @@ Azure Functions is a serverless framework developed by Microsoft and provides ri
 
 ## Deep Neural Network
 
-<img src="../images/serverless-dnn-azure-functions-ml-dotnet/ai-ml-dl.png" alt="AI vs ML vs DL" style="zoom:80%;" />
+<img src="/images/serverless-dnn-azure-functions-ml-dotnet/ai-ml-dl.png" alt="AI vs ML vs DL" style="zoom:80%;" />
 
 ​							src: https://quantdare.com/what-is-the-difference-between-deep-learning-and-machine-learning/
 
 Deep Learning is subset of Machine learning in Artificial Intelligence. It is capable of learning features on its own compared to machine learning where features are identified manually. A neural network, is a technology built to simulate the activity of a human brain such as pattern recognition and its done through a set of layers. When we have multiple layers present in a neural network, its called as Deep Neural network. It mainly comprise of an input layer, multiple hidden layers and a final output layer. I'll be using a pre-trained deep neural network such as ResNet18 in this tutorial. Pre-trained means its already trained on large amount of images and we'll use that learning to make predictions for new images being given to the machine learning pipeline. Its called as [Transfer Learning](https://en.wikipedia.org/wiki/Transfer_learning).
 
-<img src="../images/serverless-dnn-azure-functions-ml-dotnet/ml-dl.png" alt="ML vs DL" style="zoom:80%;" />
+<img src="/images/serverless-dnn-azure-functions-ml-dotnet/ml-dl.png" alt="ML vs DL" style="zoom:80%;" />
 
 ​							src: https://quantdare.com/what-is-the-difference-between-deep-learning-and-machine-learning/
 
 ## ML.Net
 
-<img src="../images/serverless-dnn-azure-functions-ml-dotnet/ml-dotnet.png" alt="ML.Net" style="zoom:80%;" />
+<img src="/images/serverless-dnn-azure-functions-ml-dotnet/ml-dotnet.png" alt="ML.Net" style="zoom:80%;" />
 
 [**ML.Net**](https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet) is a cross-platform framework from Microsoft for developing Machine learning models in the .Net ecosystem. It allows .Net developers to solve business problems using machine learning algorithms leveraging their preferred language such as C# or F#. It's highly scalable and used within Microsoft in many of its products such as Bing, Powerpoint, etc. I'll be using image classification algorithms for this tutorial.
 
@@ -70,7 +70,7 @@ As this is a classification problem where an image is given to the App and its c
 
 I'll be using a pre-trained [MobileNet V2](https://arxiv.org/abs/1801.04381) model for predictions. In order to use this, donwload [Mobilenet](https://github.com/onnx/models/blob/master/vision/classification/mobilenet/model/mobilenetv2-7.onnx) and upload it to Azure blob storage both locally(storage emulator) and cloud. I have stored it in 'serverlessdnnstorage' container and file name as **mobilenetv2-7.onnx**
 
-<img src="..\images\serverless-dnn-azure-functions-ml-dotnet\mobilenet-architecture.png" alt="MobileNet V2 Architecture" style="zoom:80%;" />
+<img src="/images/serverless-dnn-azure-functions-ml-dotnet/mobilenet-architecture.png" alt="MobileNet V2 Architecture" style="zoom:80%;" />
 
 ​						source: https://ai.googleblog.com/2018/04/mobilenetv2-next-generation-of-on.html
 
@@ -91,13 +91,13 @@ I'll first create Azure function locally using template present in Visual Studio
 
 Let's create a new project and select 'Azure Function' from the project template and add this project to the existing solution.
 
-<img src="../images/serverless-dnn-azure-functions-ml-dotnet/azure-function-template.png" alt="Azure Function Template" style="zoom:67%;" />
+<img src="/images/serverless-dnn-azure-functions-ml-dotnet/azure-function-template.png" alt="Azure Function Template" style="zoom:67%;" />
 
 
 
 In the next dialog, give a name to the project 'ServerlessDNNFunction' and click create.
 
-<img src="../images/serverless-dnn-azure-functions-ml-dotnet/azure-function-http-trigger.png" alt="Create project - Http Trigger" style="zoom: 50%;" />
+<img src="/images/serverless-dnn-azure-functions-ml-dotnet/azure-function-http-trigger.png" alt="Create project - Http Trigger" style="zoom: 50%;" />
 
 This will add a new project to ServerlessDNN solution. Build the solution, just to ensure there are no errors. A default function(Function1) will be added.
 
@@ -133,7 +133,7 @@ namespace ServelessDNNFunction
 
 Press F5 to run the project and it should generate an endpoint like http://localhost:7071/api/ClassifyImage
 
-<img src="../images/serverless-dnn-azure-functions-ml-dotnet/azure-function-endpoint.png" alt="Azure Function Endpoint" style="zoom:80%;" />
+<img src="/images/serverless-dnn-azure-functions-ml-dotnet/azure-function-endpoint.png" alt="Azure Function Endpoint" style="zoom:80%;" />
 
 - Hit the url in browser and message 'This HTTP triggered function executed successfully. 
 - Remove 'get' from the HttpTrigger attribute of the function as we only need 'post' to upload an image.
@@ -141,7 +141,7 @@ Press F5 to run the project and it should generate an endpoint like http://local
 
 In order to upload an image from postman, create a POST request with above URL and select 'Body' as binary. Select a file by clicking on 'Select File' in the Body tab
 
-<img src="../images/serverless-dnn-azure-functions-ml-dotnet/postman-post-request.png" alt="Postman POST request" style="zoom:80%;" />
+<img src="/images/serverless-dnn-azure-functions-ml-dotnet/postman-post-request.png" alt="Postman POST request" style="zoom:80%;" />
 
 Add below code in Azure function to read and save uploaded image to temp directory
 
@@ -153,17 +153,17 @@ Add below code in Azure function to read and save uploaded image to temp directo
 
   - Launch Azure Storage Explorer and select 'Local & Attached' account.
 
-    <img src="../images/serverless-dnn-azure-functions-ml-dotnet/storage-explorer-create-blob.png" alt="Create Blob Container" style="zoom:80%;" />
+    <img src="/images/serverless-dnn-azure-functions-ml-dotnet/storage-explorer-create-blob.png" alt="Create Blob Container" style="zoom:80%;" />
 
   - Select 'serverlessdnn' and click on Upload to upload **mobilenetv2-7.onnx**
 
-    <img src="../images/serverless-dnn-azure-functions-ml-dotnet/storage-explorer-upload.png" alt="Upload file to blob" style="zoom:80%;" />
+    <img src="/images/serverless-dnn-azure-functions-ml-dotnet/storage-explorer-upload.png" alt="Upload file to blob" style="zoom:80%;" />
 
-    <img src="../images/serverless-dnn-azure-functions-ml-dotnet/storage-explorer-upload-dialog.png" alt="Upload Model" style="zoom:80%;" />
+    <img src="/images/serverless-dnn-azure-functions-ml-dotnet/storage-explorer-upload-dialog.png" alt="Upload Model" style="zoom:80%;" />
 
   - Model will be uploaded to blob and available to be used.
 
-    â€‹	<img src="../images/serverless-dnn-azure-functions-ml-dotnet/storage-explorer-model.png" alt="Uploaded Model" style="zoom:80%;" />
+    <img src="/images/serverless-dnn-azure-functions-ml-dotnet/storage-explorer-model.png" alt="Uploaded Model" style="zoom:80%;" />
 
     
 
@@ -171,7 +171,7 @@ Add below code in Azure function to read and save uploaded image to temp directo
 
   - Navigate back to Azure function in visual studio. In order to load model we need to have below changes
 
-    <img src="../images/serverless-dnn-azure-functions-ml-dotnet/blob-storage-conn-string.png" alt="Blobl Storage Connection String" style="zoom:80%;" />
+    <img src="/images/serverless-dnn-azure-functions-ml-dotnet/blob-storage-conn-string.png" alt="Blobl Storage Connection String" style="zoom:80%;" />
 
   - Open local.settings.json and replace with below content
 
@@ -314,7 +314,7 @@ Add below code in Azure function to read and save uploaded image to temp directo
       
       Make a note of input and output layer names and use it.
   
-    <img src="../images/serverless-dnn-azure-functions-ml-dotnet/netron-mobilenet.png" alt="Netron Output" style="zoom:80%;" />
+    <img src="/images/serverless-dnn-azure-functions-ml-dotnet/netron-mobilenet.png" alt="Netron Output" style="zoom:80%;" />
       
     - Now we'll create MLContext and load the ONNX model
 
@@ -422,17 +422,17 @@ Add below code in Azure function to read and save uploaded image to temp directo
 
   - Run Project and hit the URL with an image of a cat from Postman as shown below
 
-    <img src="../images/serverless-dnn-azure-functions-ml-dotnet/rest-input-dog.png" alt="REST Client" style="zoom:80%;" />
+    <img src="/images/serverless-dnn-azure-functions-ml-dotnet/rest-input-dog.png" alt="REST Client" style="zoom:80%;" />
 
     
 
   - Input image
 
-    <img src="../images/serverless-dnn-azure-functions-ml-dotnet/dog.jpg" alt="Input - Dog" style="zoom:80%;" />
+    <img src="/images/serverless-dnn-azure-functions-ml-dotnet/dog.jpg" alt="Input - Dog" style="zoom:80%;" />
 
   - Predicted: 212 (English setter)
 
-    <img src="../images/serverless-dnn-azure-functions-ml-dotnet/predicted-212.png" alt="Predicted - 212" style="zoom:80%;" />
+    <img src="/images/serverless-dnn-azure-functions-ml-dotnet/predicted-212.png" alt="Predicted - 212" style="zoom:80%;" />
     
   - Predicted class is 212 which corresponds to 'English Setter', one of the dog breed. The prediction may not be very accurate as we have used MobileNet which doesn't have a very good accuracy. The reason of using it is small model size. Azure function can process small models only in consumption plan. If you have a high configuration of Azure Function, a large model could be used. Also, memory allocated in consumption plan is 1.5 GB only for the CPU.
 
@@ -447,31 +447,31 @@ Now we are going to deploy this function app on Cloud(Azure). We need an Azure s
 
 2. Before we deploy function to cloud, please ensure **mobilenetv2-7.onnx** is saved to Azure Storage blob with the correct container name and blob name. Follow the steps mentioned for local, just replace local with Azure account.
 
-   <img src="../images/serverless-dnn-azure-functions-ml-dotnet/mobilenet-blob.png" alt="Blob Container - MobileNet" style="zoom:80%;" />
+   <img src="/images/serverless-dnn-azure-functions-ml-dotnet/mobilenet-blob.png" alt="Blob Container - MobileNet" style="zoom:80%;" />
 
 3. Deploying through Visual Studio
 
    - Right click on ServerlessDNNFunction project and select Publish
 
-     <img src="../images/serverless-dnn-azure-functions-ml-dotnet/azure-deploy-target.png" alt="Azure Deploy Target" style="zoom:80%;" />
+     <img src="/images/serverless-dnn-azure-functions-ml-dotnet/azure-deploy-target.png" alt="Azure Deploy Target" style="zoom:80%;" />
 
-     <img src="../images/serverless-dnn-azure-functions-ml-dotnet/azure-deploy-target-os.png" alt="Target OS" style="zoom:80%;" />
+     <img src="/images/serverless-dnn-azure-functions-ml-dotnet/azure-deploy-target-os.png" alt="Target OS" style="zoom:80%;" />
 
    - Login with your Azure credentials in the next dialog. Select subscription and Resource group. I'll create a new Azure Function. Click on 'Create a new Azure Function' at the bottom.
 
-     <img src="../images/serverless-dnn-azure-functions-ml-dotnet/azure-deploy-rg-selection.png" alt="RG Selection" style="zoom:80%;" />
+     <img src="/images/serverless-dnn-azure-functions-ml-dotnet/azure-deploy-rg-selection.png" alt="RG Selection" style="zoom:80%;" />
 
    - Fill in the details of new Azure function
 
-     <img src="../images/serverless-dnn-azure-functions-ml-dotnet/azure-deploy-fn-dialog.png" alt="Azure Function details" style="zoom:80%;" />
+     <img src="/images/serverless-dnn-azure-functions-ml-dotnet/azure-deploy-fn-dialog.png" alt="Azure Function details" style="zoom:80%;" />
 
    - If above step is successful, skip next step. If its unsuccessful and gives below error, navigate to previous dialog, select 'Specific target' and select 'Windows'. Hopefully this time Azure function will be created.
 
-     <img src="../images/serverless-dnn-azure-functions-ml-dotnet/azure-deploy-fn-error.png" alt="Azure Function error" style="zoom:80%;" />
+     <img src="/images/serverless-dnn-azure-functions-ml-dotnet/azure-deploy-fn-error.png" alt="Azure Function error" style="zoom:80%;" />
 
    - Successful creation of Azure function
 
-     <img src="../images/serverless-dnn-azure-functions-ml-dotnet/azure-deploy-fn-success.png" alt="Successful Function Creation" style="zoom:80%;" />
+     <img src="/images/serverless-dnn-azure-functions-ml-dotnet/azure-deploy-fn-success.png" alt="Successful Function Creation" style="zoom:80%;" />
 
    - Once published, Azure Function app is ready to use.
 
@@ -481,7 +481,7 @@ Now we are going to deploy this function app on Cloud(Azure). We need an Azure s
      System.IO.FileLoadException : Could not load file or assembly 'ServerlessDNNFunction, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
      ```
 
-     <img src="../images/serverless-dnn-azure-functions-ml-dotnet/platform-settings-64-bit.png" alt="Platform Settings - 64 bit" style="zoom:80%;" />
+     <img src="/images/serverless-dnn-azure-functions-ml-dotnet/platform-settings-64-bit.png" alt="Platform Settings - 64 bit" style="zoom:80%;" />
 
      
 
@@ -491,17 +491,17 @@ Now we are going to deploy this function app on Cloud(Azure). We need an Azure s
 
    - Run Project and hit the URL with an image of a cat from Postman as shown below
 
-     <img src="../images/serverless-dnn-azure-functions-ml-dotnet/rest-input-dog-cloud.png" alt="Prediction - Dog" style="zoom:80%;" />
+     <img src="/images/serverless-dnn-azure-functions-ml-dotnet/rest-input-dog-cloud.png" alt="Prediction - Dog" style="zoom:80%;" />
 
      
 
    - Input image
 
-     <img src="../images/serverless-dnn-azure-functions-ml-dotnet/\dog.jpg" alt="Input - Dog" style="zoom:80%;" />
+     <img src="/images/serverless-dnn-azure-functions-ml-dotnet/\dog.jpg" alt="Input - Dog" style="zoom:80%;" />
 
    - Predicted: 212 (English setter)
 
-     <img src="../images/serverless-dnn-azure-functions-ml-dotnet/predicted-212-cloud.png" alt="Predicted - 211" style="zoom:80%;" />
+     <img src="/images/serverless-dnn-azure-functions-ml-dotnet/predicted-212-cloud.png" alt="Predicted - 211" style="zoom:80%;" />
 
      
 
