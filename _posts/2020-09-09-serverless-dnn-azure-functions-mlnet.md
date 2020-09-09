@@ -1,12 +1,12 @@
 ---
 layout: post
 comments: true
-title: "Serverless Deep Neural Network with Azure Functions and ML.Net"
+title: "End-to-End Serverless Deep Neural Network with Azure Functions and ML.Net"
 category: computer vision
 tags: [serverless, cloud, neural network, azure, azure functions, mlnet]
 ---
 
-# Serverless Deep Neural Network with Azure Functions and ML.Net
+# End-to-End Serverless Deep Neural Network with Azure Functions and ML.Net
 
 <img src="/images/serverless-dnn-azure-functions-ml-dotnet/dnn-mlnet-serverless.png" alt="Serverless + DNN + ML.net" style="zoom:80%;" />
 
@@ -44,7 +44,7 @@ Deep Learning is subset of Machine learning in Artificial Intelligence. It is ca
 
 <img src="/images/serverless-dnn-azure-functions-ml-dotnet/ml-dl.png" alt="ML vs DL" style="zoom:80%;" />
 
-​							src: https://quantdare.com/what-is-the-difference-between-deep-learning-and-machine-learning/
+​							source: https://quantdare.com/what-is-the-difference-between-deep-learning-and-machine-learning/
 
 ## ML.Net
 
@@ -304,59 +304,50 @@ Add below code in Azure function to read and save uploaded image to temp directo
       }
       ```
       
+    - Add a new class 'ModelOutput' which holds information about the output image that will be uploaded.
       
-  
-- Add a new class 'ModelOutput' which holds information about the output image that will be uploaded.
-  
-  ```c#
-          public class ModelOutput
+      ```c#
+      public class ModelOutput
       {
-              [ColumnName("mobilenetv20_output_flatten0_reshape0")]
-              public float[] Score { get; set; }
-          }
-  ```
-  
+      	[ColumnName("mobilenetv20_output_flatten0_reshape0")]
+      	public float[] Score { get; set; }
+      }
+      ```
       **Score** attribute is important. The value '**mobilenetv20_output_flatten0_reshape0**' is the name of output layer of the model. You can get it by opening mobilenetv2-7.onnx file using [Netron](https://github.com/lutzroeder/netron) application. As seen below input layer name is '**data**' and output layer name is '**mobilenetv20_output_flatten0_reshape0**'. 
       
       Make a note of input and output layer names and use it.
-  
-    <img src="/images/serverless-dnn-azure-functions-ml-dotnet/netron-mobilenet.png" alt="Netron Output" style="zoom:80%;" />
-      
-    - Now we'll create MLContext and load the ONNX model
 
-      - Add below nuget packages
-    - Microsoft.ML.OnnxTransformer
-      
-      - For ML pipeline, three transformations are done
-    - ResizeImages -  It is to ensure the size of input size is 224 x224
-      
-        - ExtractPixels - Its used to extract pixel values from the data specified in the column. A pixel value varies from 0-255.
-    - ApplyOnnxModel - It loads the ONNX model from the specified path
-      
-      - Data is loaded in a lazy manner using MLContext. 
-  - In order to load the data into pipeline, Fit(...) method is called.
+    <img src="/images/serverless-dnn-azure-functions-ml-dotnet/netron-mobilenet.png" alt="Netron Output" style="zoom:80%;" />
+
+    ​	Now we'll create MLContext and load the ONNX model
+
+    - Add 'Microsoft.ML.OnnxTransformer' nuget packages
+    - For ML pipeline, three transformations are done
+      - ResizeImages:  It is to ensure the size of input size is 224 x224
+      - ExtractPixels: Its used to extract pixel values from the data specified in the column. A pixel value varies from 0-255.
+      - ApplyOnnxModel: It loads the ONNX model from the specified path
+    - Data is loaded in a lazy manner using MLContext. 
+    - In order to load the data into pipeline, Fit(...) method is called.
+
+    ```c#
+    // STEP-3: Load ONNX model into ML.Net MLContext
+    var modelInputName = "data";
+    var modelOutputName = "mobilenetv20_output_flatten0_reshape0";
     
-      ```c#
-      // STEP-3: Load ONNX model into ML.Net MLContext
-      var modelInputName = "data";
-      var modelOutputName = "mobilenetv20_output_flatten0_reshape0";
+    var mlContext = new MLContext(seed: 1);
+
+    var emptyData = new List<ModelInput>();
+    var data = mlContext.Data.LoadFromEnumerable(emptyData);
       
-      var mlContext = new MLContext(seed: 1);
-      
-      ```
-  
-  var emptyData = new List<ModelInput>();
-      var data = mlContext.Data.LoadFromEnumerable(emptyData);
-      
-      var pipeline = mlContext.Transforms.ResizeImages(resizing: ImageResizingEstimator.ResizingKind.Fill, outputColumnName: modelInputName, imageWidth: ImageSettings.Width, imageHeight: ImageSettings.Height, inputColumnName: nameof(ModelInput.ImageSource))
+    var pipeline = mlContext.Transforms.ResizeImages(resizing: ImageResizingEstimator.ResizingKind.Fill, outputColumnName: modelInputName, imageWidth: ImageSettings.Width, imageHeight: ImageSettings.Height, inputColumnName: nameof(ModelInput.ImageSource))
           .Append(mlContext.Transforms.ExtractPixels(outputColumnName: modelInputName))
           .Append(mlContext.Transforms.ApplyOnnxModel(modelFile: savedModelPath, outputColumnName: modelOutputName, inputColumnName: modelInputName));
       
-      var model = pipeline.Fit(data);
-      ```
+    var model = pipeline.Fit(data);
+    ```
+
   
-  
-  
+
 - **STEP-4:** Prediction
 
   In order to predict, we need to supply the image uploaded to Azure function and pass it to the ML pipeline. In ML.Net PrectionEngine has Predict(...) API to perform prediction on a single input image. **maxScore** gives the predicted class
@@ -442,7 +433,7 @@ Add below code in Azure function to read and save uploaded image to temp directo
     
   - Predicted class is 212 which corresponds to 'English Setter', one of the dog breed. The prediction may not be very accurate as we have used MobileNet which doesn't have a very good accuracy. The reason of using it is small model size. Azure function can process small models only in consumption plan. If you have a high configuration of Azure Function, a large model could be used. Also, memory allocated in consumption plan is 1.5 GB only for the CPU.
 
-### Image Classification - Serverless (Azure Function) - Cloud
+## Image Classification - Serverless (Azure Function) - Cloud
 
 Now we are going to deploy this function app on Cloud(Azure). We need an Azure subscription for it. Deploying to azure is pretty easy through Visual Studio. Steps in deploying the Azure Function to the cloud is as follows.
 
