@@ -27,7 +27,7 @@ twitter_username: praveenraghuvan
 github_username:  praveenraghuvanshi
 
 # Build settings
-remote_theme: cayman
+remote_theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
 
