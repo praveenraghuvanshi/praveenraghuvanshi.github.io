@@ -27,11 +27,9 @@ twitter_username: praveenraghuvan
 github_username:  praveenraghuvanshi
 
 # Build settings
-# theme: minima
-remote_theme: "mmistakes/minimal-mistakes@4.22.0"
+theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-include-cache
 
 # Exclude from processing.
 # The following items will not be processed, by default.
