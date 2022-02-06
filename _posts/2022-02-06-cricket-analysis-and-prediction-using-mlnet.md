@@ -5,7 +5,6 @@ title: "Cricket Analysis and Prediction using ML.Net(C#)"
 category: data science
 tags: [machine learning, regression, mlnet, data science]
 ---
-# Cricket Analysis and Prediction using ML.Net(C#)
 
 <div align="center">
     <img src="/images/cricket-analysis-and-prediction/cricket-banner.png" alt="Cricket" style="zoom: 150%;margin:auto;" />
