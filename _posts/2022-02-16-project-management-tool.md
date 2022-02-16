@@ -69,5 +69,3 @@ We saw a brief comparison among different tools based on different parameters. W
 - [ClickUp vs Asana: Which Is Best?](https://tech.co/project-management-software/clickup-vs-asana)
 - [Best FREE Project Management Software 2022 | Monday.com vs Clickup vs Asana](https://www.youtube.com/watch?v=Qt-grIDOfx4)
 
-## Contact
-
