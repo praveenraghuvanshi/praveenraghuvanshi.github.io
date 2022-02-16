@@ -1,12 +1,12 @@
 ---
+
 layout: post
 comments: true
 title: "Making a choice for a Project Management Tool"
 category: project management
-
 ---
 
-# Making a choice for a Project Management Tool
+# Making a choice for Project Management Tool
 
 I was looking for a project management tool and stumbled over plethora of tools available in the market. It's difficult to make a choice considering the growth of a project that can start with couple of people to a bigger team. This is not an exhaustive article comparing a lot of tools. I just wanted to keep it simple and share my reasoning in choosing a tool. I'll be sharing the reference links that can used to get more details. Let's get started.
 
