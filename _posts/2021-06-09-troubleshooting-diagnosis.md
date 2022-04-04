@@ -13,7 +13,7 @@ category: Troubleshooting
   <img src="/images/troubleshooting-diagnosis/troubleshooting.png" alt="Troubleshooting" style="zoom:80%;" />
 </div>
 
-## Issue: #1
+## Issue 1
 
 #### Problem: Tool 'microsoft.dotnet-interactive' failed to install.
 
@@ -37,3 +37,16 @@ Delete 'Nuget.Config' file located at 'C:\Users\<YOUR_USERNAME>\' and retry the 
 
 ---
 
+## Issue 2
+
+#### Problem: EntryPointNotFoundException: Unable to find an entry point named 'OrtGetApiBase' in DLL 'onnxruntime'.
+
+<div align="center">
+  <img src="/images/troubleshooting-diagnosis/onnxruntime-error.png" alt="Onnx runtime exception installation" style="zoom:80%;" />
+</div>
+
+#### Solution
+
+Add a reference to Microsoft.ML.OnnxRuntime nuget package.
+
+https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime/
