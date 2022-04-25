@@ -34,7 +34,6 @@ Delete 'Nuget.Config' file located at 'C:\Users\<YOUR_USERNAME>\' and retry the 
 </div>
 
 
-
 ---
 
 ## Issue 2
@@ -50,3 +49,20 @@ Delete 'Nuget.Config' file located at 'C:\Users\<YOUR_USERNAME>\' and retry the 
 Add a reference to Microsoft.ML.OnnxRuntime nuget package.
 
 https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime/
+
+---
+
+## Issue 3
+
+### Problem:  0% [Connecting to archive.ubuntu.com] 
+
+<div align="center">
+  <img src="/images/troubleshooting-diagnosis/wsl-connecting-to-internet.png" alt="WSL Internet connection issue" style="zoom:80%;" />
+</div>
+
+Internet not working in WSL
+
+### Solution
+
+Run command ```echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null```
+
